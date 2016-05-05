@@ -1,5 +1,7 @@
 $(window).load(function() {
-	new WOW().init();
+	if(!isMobile.any) {
+		new WOW().init();
+	}
 });
 
 $(window).ready(function() {
@@ -29,7 +31,18 @@ $(window).ready(function() {
 		$(".slick").slick({
 			slidesToShow: 1,
 			arrows: true,
-			dots: true
+			dots: true,
+			autoplay: true,
+			 responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					dots: false,
+					arrows: false,
+					adaptiveHeight: true,
+					autoplay: false
+				}
+			}]
 		});
 	/* Slick slider End*/
 	/* Form star */
@@ -44,13 +57,12 @@ $(window).ready(function() {
 		} 
 
 		yaCounter36798385.reachGoal('form');
-		$email.removeClass("invalid");
-			
+		$email.removeClass("invalid");			
 
 	});
 	/* Form end */
 	/* Popup start */
-	$(".link-mgf").magnificPopup()
+	$(".link-mgf").magnificPopup();
 	/* Popup end */
 
 });
