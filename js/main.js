@@ -25,7 +25,6 @@ $(window).ready(function() {
 	$('#clock').countdown($timer, function(event) {
 		$(this).html(event.strftime('<span class="circle"><span class="nn">%M</span></span> : <span class="circle"><span class="nn">%S</span></span>'));
 	});
-
 	/* Timer End*/
 	/* Slick slider Start*/
 		$(".slick").slick({
@@ -55,6 +54,8 @@ $(window).ready(function() {
 
 			return false;
 		} 
+
+		$(this).attr("method", "GET");
 
 		yaCounter36798385.reachGoal('form');
 		$email.removeClass("invalid");			
